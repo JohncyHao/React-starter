@@ -78,22 +78,22 @@
             // ## Modal
             // // #1 生成實體
             // console.log(bootstrap);
-            const myModal = new bootstrap.Modal("#exampleModal");
+            // const myModal = new bootstrap.Modal("#exampleModal");
             // console.log(myModal);
 
             // // #2 套用實體方法
             // .show()展開、.hide()隱藏、.toggle()切換
-            const btn = document.querySelector("#btnModal");
-            btn.addEventListener("click", () => {
-              myModal.show();
-            });
+            // const btn = document.querySelector("#btnModal");
+            // btn.addEventListener("click", () => {
+            //   myModal.show();
+            // });
 
             // #3 套用監聽
-            const myModalEl = document.getElementById("exampleModal");
-            myModalEl.addEventListener("shown.bs.modal", (event) => {
-              // do something...
-              console.log("Modal 已經展開");
-            });
+            // const myModalEl = document.getElementById("exampleModal");
+            // myModalEl.addEventListener("shown.bs.modal", (event) => {
+            //   // do something...
+            //   console.log("Modal 已經展開");
+            // });
           </script>
           <!--  -->
           <div id="root"></div>
@@ -105,6 +105,12 @@
               // #1-1 錯誤寫法（DOM 尚未生成）
 
               // #1-2 DOM 已經生成
+              useEffect(() => {
+                const myModal = new bootstrap.Modal("#newModal");
+                setTimeout(() => {
+                  myModal.show();
+                }, 1000);
+              });
 
               // #2 錯誤寫法
               // 2-1 作用域錯誤
